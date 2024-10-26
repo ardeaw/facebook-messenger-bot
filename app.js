@@ -13,11 +13,11 @@ app.use(express.static(path.join(__dirname, "images")));
 const PORT = process.env.PORT || 3000;
 // Verify Token
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
-const PAGEACCESS_TOKEN = process.env.PAGEACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const PAGE_ID = process.env.PAGE_ID;
 
 // ตรวจสอบว่ามีค่า PAGEACCESS_TOKEN หรือไม่
-if (!PAGEACCESS_TOKEN) {
+if (!PAGE_ACCESS_TOKEN) {
   console.error("PAGE_ACCESS_TOKEN is not set.");
   process.exit(1); // หยุดโปรแกรมหากไม่มีค่า PAGE_ACCESS_TOKEN
 }
@@ -179,7 +179,7 @@ async function sendMessage(sender_psid, response) {
 
   // พิมพ์ข้อมูลสำหรับดีบัก
   // console.log({
-  //   url: `https://graph.facebook.com/v20.0/me/messages?access_token=${PAGEACCESS_TOKEN}`,
+  //   url: `https://graph.facebook.com/v20.0/me/messages?access_token=${PAGE_ACCESS_TOKEN}`,
   //   data: requestBody,
   // });
   try {
@@ -187,7 +187,7 @@ async function sendMessage(sender_psid, response) {
       method: "POST",
       url: `https://graph.facebook.com/v20.0/me/messages`,
       params: {
-        access_token: PAGEACCESS_TOKEN,
+        access_token: PAGE_ACCESS_TOKEN,
       },
       data: requestBody,
     });
