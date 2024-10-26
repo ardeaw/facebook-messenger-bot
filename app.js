@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const PAGE_ID = process.env.PAGE_ID;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${OPENAI_API_KEY}`;
 
 // ตรวจสอบว่ามีค่า PAGEACCESS_TOKEN หรือไม่
 if (!PAGE_ACCESS_TOKEN) {
@@ -24,7 +27,7 @@ if (!PAGE_ACCESS_TOKEN) {
 
 // ตั้งค่า OpenAI API
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  // apiKey: process.env.OPENAI_API_KEY,
   organization: process.env.OPENAI_ORG_ID,
   project: process.env.OPENAI_PROJECT_ID,
 });
