@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 // Verify Token
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-console.log(`PAGE_ACCESS_TOKEN : ${PAGE_ACCESS_TOKEN}`)
+//console.log(`PAGE_ACCESS_TOKEN : ${PAGE_ACCESS_TOKEN}`)
 const PAGE_ID = process.env.PAGE_ID;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY
 
