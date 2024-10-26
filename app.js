@@ -38,7 +38,7 @@ const assistant = openai.beta.assistants.create({
   // ตั้งค่่าตามต้องการ
   // name: "Expert Thai Seller",
   // ใส่คำสั่งที่ต้องการให้ทำ
-   headers:  {Authentication:process.env.OPENAI_API_KEY},
+  Headers:  {Authentication:process.env.OPENAI_API_KEY},
   tools: [{ type: "file_search" }, { type: "code_interpreter" }],
   tool_resources: {
     file_search: {
