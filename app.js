@@ -28,7 +28,7 @@ if (!PAGE_ACCESS_TOKEN) {
 
 // ตั้งค่า OpenAI API
 const openai = new OpenAI({
-  // apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
   organization: process.env.OPENAI_ORG_ID,
   project: process.env.OPENAI_PROJECT_ID,
 });
@@ -38,7 +38,7 @@ const assistant = openai.beta.assistants.create({
   // ตั้งค่่าตามต้องการ
   // name: "Expert Thai Seller",
   // ใส่คำสั่งที่ต้องการให้ทำ
-
+  headers:  {Authentication:{apiKey}},
   tools: [{ type: "file_search" }, { type: "code_interpreter" }],
   tool_resources: {
     file_search: {
